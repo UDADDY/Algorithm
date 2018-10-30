@@ -1,50 +1,44 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
-int powOct(int n,int power)
-{
-  for(int i=0;i<power;i++)
-  {
-    n*=8;
-  }
-  return n;
-}
-
 int main()
 {
-  int N;
-  scanf("%d",&N );
-  int integer=0;
-  int power=0;
-
-  // Oct To Int
-  while (true) {
-    /* code */
-    if(N==0)
-      break;
-    integer+=powOct((N%10),power);
-    N/=10;
-    power++;
-  }
-
-  std::vector<int> bin;
-  // Int To Bin
-  while (true) {
-    /* code */
-    if(integer==0)
-      break;
-    if(integer%2==0)
-      bin.push_back(0);
-    else
-      bin.push_back(1);
-    integer/=2;
-  }
-
-  for(int i=bin.size()-1;0<=i;i--)
+  string str;
+  bool first = true;
+  cin >> str;
+  if(str.size()==1 && str[0]-48==0)
   {
-    cout << bin[i];
+    cout << "0"<<endl;
+    return 0;
   }
-  printf("\n");
+  for(int i=0;i<str.size();i++)
+  {
+    int oct = str[i]-48;
+    int bin[3];
+    for(int j=0;j<3;j++)
+    {
+      bin[j]=oct%2;
+      oct/=2;
+    }
+    for(int j=2;0<=j;j--)
+    {
+      if(i==0)
+      {
+        if(first && bin[j]==0)
+          cout << "";
+        else if(first && bin[j]==1)
+        {
+          cout << bin[j];
+          first=false;
+        }
+        else
+          cout << bin[j];
+      }
+      else
+        cout << bin[j];
+    }
+  }
 }
