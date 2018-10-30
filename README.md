@@ -1,2 +1,4 @@
 # Hyun's Algorithm
-<a href="https://www.acmicpc.net">BAEKJOON Online Judge</a>
+<a href ="https://github.com/UDADDY/Algorithm">Hyun's</a>
+
+    FUCK
