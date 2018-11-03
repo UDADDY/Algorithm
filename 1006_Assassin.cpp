@@ -9,6 +9,7 @@ int main()
   {
     int N,W;
     scanf("%d %d",&N,&W);
+    printf("FUCK\n" );
 
   }
   return 0;
